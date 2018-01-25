@@ -8,16 +8,35 @@
 
 import Foundation
 
+// var textNumber = String(number)
+// var numberName = Int(name)
+//var randomNumber = arc4random_uniform(100)
+// var normalRandomNumber = Int(randomNumber)
+//////////////////////////////////////////////////
+
+
 //Generate a random number
-var randomNumber = arc4random_uniform(100)
+// TODO: Cast randomNumber to an int
+var randomNumber = Int(arc4random_uniform(100))
+var guess: Int?
+//PUT "WHILE" FOR LOOP
 //Ask user for input (guess)
-var prompt = ("What is your guess?")
 print("What is your guess?")
+
 //Take user input
-var number = readLine()
+guess = Int(readLine()!)!
+
+// They guessed correctly
+if randomNumber == guess {
+    print("YOU WON !!!!!")
+} else if randomNumber > guess! {
+    print ("The number was higher!")
+} else if randomNumber < guess! {
+    print ("The number was lower!")
+}
+
 //Determine if its wrong or right(Loop until correct)
-while
-var numberOfGuess
+
 
 //If correct, ask if they want to play again
 

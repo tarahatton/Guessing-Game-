@@ -108,16 +108,23 @@ while playAgain == "yes" {
         if randomNumber == guess {
             print("YOU WON!!🎊 the answer was \(randomNumber)!😱")
         }
-        print("Do you want to play again?🙇‍♀️")
+    if tries >= 5 {
+        print("YOU LOSE!!💀👎")
+        
+    }
+    print("Do you want to play again?🙇‍♀️")
+    
         
         playAgain = (readLine()!)
         while playAgain != "yes" && playAgain != "no"{
             print("Please say yes or no 😬")
             playAgain = readLine()!
             
-            tries = 1
+           
         }
-    }
+    
+    tries = 1
+}
 
 
 //or

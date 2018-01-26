@@ -63,39 +63,75 @@ import Foundation
 //} ****EXAMPLE***(
 //If incorrect tell them the correct answer and ask them to play again
 
-var randomNumber = Int(arc4random_uniform(1000))
+var randomNumber = Int(arc4random_uniform(100))
 var guess: Int?
 var tries = 1
 var playAgain = "yes"
 while playAgain == "yes" {
-print("Guess a number")
-guess = Int(readLine()!)!
-print (randomNumber)
-while guess != randomNumber && tries <= 5 {
     
-    if randomNumber < guess! {
-        print("The number is lower!")
-    } else if randomNumber > guess! {
-        print("The number is higher!")
+    
+//    print("Guess a number")
+//    guess = Int(readLine()!)
+//    while guess != randomNumber && tries >= 5 {
+//        print("Please only guess a number")
+//        guess = Int(readLine()!)
+//
+//    }
+    
+    print("Welcome to the guessing game!🙋‍♀️ Please guess a number")
+    guess = Int(readLine()!)
+    
+    
+    
+    while guess != randomNumber && tries < 5 {
+       
+        while guess == nil {
+            print("Please only guess a number 🤦‍♀️🙄")
+            guess = Int(readLine()!)
+        }
+
+        if randomNumber < guess! {
+            print("The number is lower!😈")
+            print("Guess again!🤣")
+            guess = Int(readLine()!)
+            tries += 1
+      
+        } else if randomNumber > guess! {
+            print("The number is higher!😝")
+            print("Guess again!🤣")
+            guess = Int(readLine()!)
+            tries += 1
+      
+        }
+        
     }
-print("Guess again!")
-guess = Int(readLine()!)!
-tries += 1
+        if randomNumber == guess {
+            print("YOU WON!!🎊 the answer was \(randomNumber)!😱")
+        }
+        print("Do you want to play again?🙇‍♀️")
+        
+        playAgain = (readLine()!)
+        while playAgain != "yes" && playAgain != "no"{
+            print("Please say yes or no 😬")
+            playAgain = readLine()!
+            
+            tries = 1
+        }
+    }
 
-}
 
-if randomNumber == guess {
-    print("YOU WON!!")
-}
-    print("Do you want to play again?")
-    playAgain = (readLine()!)
-}
 //or
 //if number1 == 1 || number2 == 2 {
 //    print("yes")
 //}
 
 //and
+
+//guess = Int(readLine()!)
+//while guess == nil {
+//    print("Please guess a number")
+//    guess = Int(readLine()!)
+//}
 
 
 

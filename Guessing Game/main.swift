@@ -117,7 +117,7 @@ while playAgain == "yes" {
         
         playAgain = (readLine()!)
         while playAgain != "yes" && playAgain != "no"{
-            print("Please say yes or no 😬")
+            print("Please say 'yes' or 'no' 😬")
             playAgain = readLine()!
             
            
